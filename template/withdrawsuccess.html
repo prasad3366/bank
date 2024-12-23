@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdraw Successful</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif; /* Modern font */
+            background-color: #181818; /* Deeper dark background */
+            color: #f5f5f5; /* Light gray text color for better contrast */
+            overflow-x: hidden; /* Smooth scrolling on the y-axis */
+            text-align: center;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #7d5a44; /* Modern brown shade */
+            padding: 2px;  /* Increased padding for a more spacious feel */
+            color: white;
+            border-radius: 20px; /* Rounded corners for the header */
+            margin-bottom: 22px; /* Added spacing between header and content */
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 90vw; /* Constrain nav width */
+            margin: 0 auto; /* Center the navigation */
+        }
+
+        nav .logo h1 {
+            font-size: 1.5rem;  /* Larger font size for the logo */
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #f9e1c1;  /* Soft skin-tone color for the logo */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;  /* Increased gap for better spacing */
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-size: 1rem; /* Slightly larger font for navigation links */
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #f9e1c1;  /* Light skin color for hover effect */
+            transform: scale(1.1);  /* Subtle zoom effect */
+        }
+
+        /* Deposit Success Page Styles */
+        h1 {
+            color:  #7b5a44;  /* Green color for success */
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            color: #f9e1c1;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #f9e1c1;  /* Button background color */
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #45a049;  /* Darker green when hovering */
+        }
+
+        footer {
+            background-color: #7d5a44; /* Modern brown shade */
+            padding: 5px;
+            color: white;
+            border-radius: 20px;
+            margin-top: 300px; /* Add space above footer */
+        }
+
+        footer .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 90vw; /* Constrain footer content width */
+            margin: 0 auto; /* Center footer content */
+        }
+
+        footer .social-links {
+            display: flex;
+            gap: 20px;  /* More space between social icons */
+        }
+
+        footer .social-icon {
+            color: black;
+            text-decoration: none;
+            font-size: 1rem;  /* Increased icon size */
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        footer .social-icon:hover {
+            color: #f9e1c1;  /* Light skin color on hover */
+            transform: translateY(-3px); /* Subtle hover animation */
+        }
+
+        footer p {
+            font-size: 1rem;
+            color: black;
+            opacity: 0.8;
+            margin-top: 20px;  /* Add margin between social links and text */
+            font-weight: 300;  /* Lighter text weight for a soft look */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Krishna's Bank</h1>
+            </div>
+            <ul>
+                <li><a href="{% url 'mybank:homepage'%}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Withdraw Successful</h1>
+    <p>Your Withdraw has been successfully processed!</p>
+    <a href="{% url 'mybank:lobby' %}">Go to Lobby</a> <!-- Replace with actual dashboard link -->
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Krishna's Bank. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-icon">Facebook</a>
+                <a href="#" class="social-icon">Twitter</a>
+                <a href="#" class="social-icon">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

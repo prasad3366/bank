@@ -1,0 +1,84 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Banking lobby</title>
+    <link rel="stylesheet" href="{% static 'lobby.css' %}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1> Prasad Bank</h1>
+            </div>
+            <ul>
+                <li><a href="{% url 'mybank:homepage'%}">Home</a></li>
+                <li><a href="{% url 'mybank:logout'%}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Welcome , {{ request.user.username}}</h2>
+            <p>Manage your account with ease</p>
+            <button class="btn">View Account</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-container">
+            <a href="{% url 'mybank:deposite' %}">
+                <div class="service-box">
+                    <h3>Deposit</h3>
+                    <p>Deposit money into your account</p>
+                </div>
+            </a>
+            <a href="{% url 'mybank:withdraw' %}">
+                <div class="service-box">
+                    <h3>Withdraw</h3>
+                    <p>Withdraw money from your account</p>
+                </div>
+            </a>
+            <a href="{% url 'mybank:sendmoney' %}">
+                <div class="service-box">
+                    <h3>Send Money</h3>
+                    <p>Send money to another account</p>
+                </div>
+            </a>
+            <a href="{% url 'mybank:transcation' %}">
+                <div class="service-box">
+                    <h3>Transaction</h3>
+                    <p>View your transaction history</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 BankX. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-icon">Facebook</a>
+                <a href="#" class="social-icon">Twitter</a>
+                <a href="#" class="social-icon">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

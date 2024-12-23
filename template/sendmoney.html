@@ -1,0 +1,80 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Send Money - Prasad Bank</title>
+    <link rel="stylesheet" href="{% static 'sendmoney.css' %}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Prasad Bank</h1>
+            </div>
+            <ul>
+                <li><a href="{% url 'mybank:lobby'%}">Lobby</a></li>
+                <li><a href="{% url 'mybank:logout'%}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Send Money Section -->
+    <section class="send-money">
+        <div class="send-money-container">
+            <h2>Send Money</h2>
+            <p>Enter the recipient's details and the amount you wish to send.</p>
+
+            <!-- Send Money Form -->
+            <form action="#" method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                    <label for="recipient-account">Select Recipiment:</label>
+                    <select name="recipient" id="recipient-account">
+                        <option value="" disabled selected>Choose an recipient</option>
+                        {% if non_staff_users %}
+                        {% for user in non_staff_users %}
+                        <option value="{{user.username}}">{{user.username}}</option>
+                        {% endfor %}
+                        {% else %}
+                        <option value="" disabled>No users Found</option>
+                        {% endif%}
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="send-amount">Amount:</label>
+                    <input type="number" id="send-amount" name="amount" required placeholder="Enter amount to send">
+                </div>
+                {% if error %}
+                <p style="color: red">{{ error.error }}</p>
+                {% endif %}
+
+
+                <button type="submit" class="btn">Send Money</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 BankX. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-icon">Facebook</a>
+                <a href="#" class="social-icon">Twitter</a>
+                <a href="#" class="social-icon">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

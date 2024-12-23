@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Banking Homepage</title>
+    <link rel="stylesheet" href="{% static 'homepage.css' %}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Prasad Bank</h1>
+            </div>
+            <ul>
+                <li><a href="{% url 'mybank:login' %}">Login</a></li>
+                <li><a href="{%url 'mybank:register' %}">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Your Trusted Financial Partner</h2>
+            <p>Secure, reliable, and efficient banking services at your fingertips.</p>
+            <a href="{%url 'mybank:register' %}" class="cta-btn">Open an Account</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-container">
+            <div class="service-box">
+                <h3>Deposit</h3>
+                <p>Manage your savings, transactions, and budget seamlessly.</p>
+            </div>
+            <div class="service-box">
+                <h3>Withdraw</h3>
+                <p>Specialized accounts and services for your growing business.</p>
+            </div>
+            <div class="service-box">
+                <h3>Send Money</h3>
+                <p>Flexible loan options for your personal or business needs.</p>
+            </div>
+            <div class="service-box">
+                <h3>Transaction</h3>
+                <p>Flexible loan options for your personal or business needs.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 BankX. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-icon">Facebook</a>
+                <a href="#" class="social-icon">Twitter</a>
+                <a href="#" class="social-icon">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transaction History - Prasad Bank</title>
+    <link rel="stylesheet" href="{% static 'transcation.css' %}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Prasad Bank</h1>
+            </div>
+            <ul>
+                <li><a href="{% url 'mybank:lobby'%}">Lobby</a></li>
+                <li><a href="{% url 'mybank:logout'%}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Transaction History Section -->
+    <section class="transaction-history">
+        <div class="transaction-container">
+            <h2>Your Transaction History</h2>
+            <p>Here are all your past transactions. You can keep track of your deposits, withdrawals, and transfers.</p>
+
+            <!-- Transaction Table -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time of Transaction</th>
+                        <th>Transaction Type</th>
+                        <th>Sender Username</th>
+                        <th>Receiver Username</th>
+                        <th>Amount Deducted</th>
+                        <th>Amount Credited</th>
+                        <th>Account Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if trans %}
+                    {% for transaction in trans %}
+                    <tr>
+                        <td>{{ transaction.time_of_transaction }}</td>
+                        <td>{{ transaction.transaction_type}}</td>
+                        <td>{{ transaction.sender_username }}</td>
+                        <td>{{ transaction.receiver_name }}</td>
+                        <td>{{ transaction.amount_deducted }}</td>
+                        <td>{{ transaction.amount_received }}</td>
+                        <td>{{ transaction.balance }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td colspan="7">No Tranactions Available</td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 BankX. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-icon">Facebook</a>
+                <a href="#" class="social-icon">Twitter</a>
+                <a href="#" class="social-icon">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
