@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account Created</title>
+    <title>Money Received</title>
     <style>
         * {
             margin: 0;
@@ -44,9 +44,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>Hello, {username}</h1>
-        <p>Your account has been successfully created with the email address <strong>[users email]</strong>. 
-            You can now log in and start using our services.</p>
+        <h1>Hello, {receiver_username}</h1>
+        <p>You have successfully received <strong>${amount}</strong> from <strong>{sender_username}</strong> 
+            with the email address <strong>{sender_email}</strong>.</p>
+        <p>Thank you for using our service!</p>
     </div>
 </body>
 </html>

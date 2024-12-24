@@ -3,9 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Account Transaction Successful</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .amount {
+            font-size: 18px;
+            color: #28a745;
+        }
+
+        .withdrawal-amount {
+            color: #dc3545;
+        }
+    </style>
 </head>
 <body>
-    <h1>account_withdraw_successfully</h1>
+
+    <!-- Deposit Successful -->
+    <div class="container">
+        <h1>Deposit Successful!</h1>
+        <p>Your deposit has been successfully processed.</p>
+        <p>You have deposited <span class="amount">$500.00</span> into your account.</p>
+        <p>You can now continue managing your account.</p>
+    </div>
+
+    <!-- Withdrawal Successful -->
+    <div class="container">
+        <h1>{username}</h1>
+        <h1>Withdrawal Successful!</h1>
+        <p>Your withdrawal has been successfully processed.</p>
+        <p>You have withdrawn <span class="withdrawal-amount">{amount}</span> from your account.</p>
+        <p>Your remaining balance will be updated accordingly.</p>
+    </div>
+
 </body>
 </html>
